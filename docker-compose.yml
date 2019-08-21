@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  bot:
+    build:
+      context: .
+    env_file: .env
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/usr/src/bot/:cached
+      - bundle-cache:/usr/local/bundle:cached
+  
+volumes:
+  bundle-cache: null
